@@ -1,3 +1,9 @@
+chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request == "Action") {
+        postTextCounts();
+    }
+});
+
 function elemLeaved () {
     event.target.removeEventListener('mouseout', elemLeaved);
     event.target.style.border="";
@@ -22,5 +28,3 @@ function elemSelected () {
 function postTextCounts () {
     document.getElementsByTagName('body')[0].addEventListener('mouseover', elemHovered);
 }
-
-postTextCounts();
